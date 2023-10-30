@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { isHex, isValidColorKey }= require('./colors')
+const { isHex, isValidColorKey }= require('./colors');
+const {createCircle, createTriangle, createSquare } = require('./template')
 inquirer 
     .prompt([
         {
@@ -25,7 +26,7 @@ inquirer
             name: 'txtColor',
             message: 'What color would you like the text to be? (if you are using a hex color, please include the `#`)',
             validate: function(input) {
-                // Check if the input is a valid color keyword
+                // Check if the input is a valid color keyword or valid hex color
                 if (!isValidColorKey(input) && !isHex(input)) {
                     return 'Invalid color format. Please enter a valid color keyword or a hexadecimal color code.';
                 }
@@ -39,17 +40,17 @@ inquirer
             message: 'please select a shape',
             name: 'shape',
             choices: [
-                "triangle",
-                "square",
-                "circle"
-            ]
+                "Triangle",
+                "Square",
+                "Circle"
+            ],
         },
         {
             type: 'input',
             message: 'what color would you like the shape to be?',
             name: 'shapeColor',
             validate: function(input) {
-                // Check if the input is a valid color keyword
+                // Check if the input is a valid color keyword or valid hex color
                 if (!isValidColorKey(input) && !isHex(input)) {
                     return 'Invalid color format. Please enter a valid color keyword or a hexadecimal color code.';
                 }
@@ -61,5 +62,14 @@ inquirer
         }
 
     ]).then((res)=> 
-    console.log(`your logo be ${res.txtColor} and will say ${res.letters}`)
+        function logoCreator(res) {
+            if (`${res.shape}`=== "Triangle") {
+                return createTriangle();
+            } else if (`${res.shape}` === "Square") {
+                return createSquare();
+            } else {
+                return createCircle();
+            };
+        }
     );
+
