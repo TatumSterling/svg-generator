@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-
+const { isHex, isValidColorKey }= require('./colors')
 inquirer 
     .prompt([
         {
@@ -21,25 +21,19 @@ inquirer
             }
         },
         {
-           type: 'input',
-           name: 'txtColor',
-           message: 'what color would you like the text to be?(if you are using a hex color please include the `#`',
-        //    validate: function(hex) {
-        //     const isHex = /^#[0-9A-F]{6}$/i;
-
-        //     if (!isHex.test(hex)) {
-        //         return 'invalid hex color format. Please enter a valied hexdecimal color'
-        //     }
-
-        //     for (let i =1; i , hex.length; i++) {
-        //         if (![0-9,A-F/i.test(hex[i])]) {
-        //             return 'invalid character in hex color. Only hexadecimal digits'
-        //         }
-        //     }
-        //     return true; 
-          
-        //    }
-        },
+            type: 'input',
+            name: 'txtColor',
+            message: 'What color would you like the text to be? (if you are using a hex color, please include the `#`)',
+            validate: function(input) {
+                // Check if the input is a valid color keyword
+                if (!isValidColorKey(input) && !isHex(input)) {
+                    return 'Invalid color format. Please enter a valid color keyword or a hexadecimal color code.';
+                }
+            
+                return true;
+                },
+            
+         },
         {
             type: 'list',
             message: 'please select a shape',
@@ -54,21 +48,16 @@ inquirer
             type: 'input',
             message: 'what color would you like the shape to be?',
             name: 'shapeColor',
-                    //    validate: function(hex) {
-        //     const isHex = /^#[0-9A-F]{6}$/i;
+            validate: function(input) {
+                // Check if the input is a valid color keyword
+                if (!isValidColorKey(input) && !isHex(input)) {
+                    return 'Invalid color format. Please enter a valid color keyword or a hexadecimal color code.';
+                }
+            
+                return true;
+                },
+            
 
-        //     if (!isHex.test(hex)) {
-        //         return 'invalid hex color format. Please enter a valied hexdecimal color'
-        //     }
-
-        //     for (let i =1; i , hex.length; i++) {
-        //         if (![0-9,A-F/i.test(hex[i])]) {
-        //             return 'invalid character in hex color. Only hexadecimal digits'
-        //         }
-        //     }
-        //     return true; 
-          
-        //    }
         }
 
     ]).then((res)=> 
