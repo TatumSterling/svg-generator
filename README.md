@@ -5,9 +5,6 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-- [Contributing](#contributing)
-- [Resources](#resources)
-- [Tests](#tests)
 - [Questions](#questions)
 
 ## Description
@@ -17,7 +14,9 @@ Hi! My name is Tatum Sterling, and this is my SVG Logo Generator application. Th
 this applications runs with node.js
         
 ## Usage
-To use this application, install anything necessary from the installation section, then click the link below to be redirected to the app. From there, you can expect to see a series of questions in the terminal . To navigate, you may answer the questions accordingly, then open the generated svg logo file in your browser to view .
+To use this application, install anything necessary from the installation section, you may click the link below for a visualization of the application. Once downloaded, you can expect to see a series of questions in the terminal . To navigate, you may answer the questions accordingly, then open the generated svg logo file in your browser to view .
+
+![alt-text]()
         
 ## License
 please refer to LICENSE in the repo
