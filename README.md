@@ -15,9 +15,8 @@ this applications runs with node.js
         
 ## Usage
 To use this application, install anything necessary from the installation section, you may click the link below for a visualization of the application. Once downloaded, you can expect to see a series of questions in the terminal . To navigate, you may answer the questions accordingly, then open the generated svg logo file in your browser to view .
-![demo](https://drive.google.com/file/d/1KuJMX4CFYmBHE-dlz0aSyfm1PAoTfXrv/view)
-![image](https://github.com/TatumSterling/svg-generator/assets/141382392/f07967fd-13db-45b5-82bd-81b9874a388d)
 
+![demo](https://drive.google.com/file/d/1CBmmM9Os4UqYu2PF5gcbLnU2EOcQzhDg/view?usp=drive_link)
 
         
 ## License
