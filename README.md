@@ -14,7 +14,7 @@ Hi! My name is Tatum Sterling, and this is my SVG Logo Generator application. Th
 this applications runs with node.js
         
 ## Usage
-To use this application, install anything necessary from the installation section, you may click the link below for a visualization of the application. Once downloaded, you can expect to see a series of questions in the terminal . To navigate, you may answer the questions accordingly, then open the generated svg logo file in your browser to view .
+To use this application, install anything necessary from the installation section, you may view the video below for a visualization of the application. Once downloaded, you can expect to see a series of questions in the terminal . To navigate, you may answer the questions accordingly, then open the generated svg logo file in your browser to view .
 
 
 [svgGeneratorDemo.webm](https://github.com/TatumSterling/svg-generator/assets/141382392/b046b414-2136-4851-9d32-220781ffa7d1)
