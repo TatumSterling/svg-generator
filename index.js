@@ -7,7 +7,7 @@ const { questions } = require('./lib/questions');
 inquirer.prompt(questions)
 .then((res) => {
   let logo;
-
+// brings in template based on user shape choice
   if (res.shape === "Triangle") {
     logo = createTriangle(res);
   } else if (res.shape === "Square") {
@@ -15,7 +15,7 @@ inquirer.prompt(questions)
   } else {
     logo = createCircle(res);
   }
-
+// writes svg file and throws error if any
   fs.writeFile('logo.svg', logo, (err) => {
     if (err) {
       console.log(err);
