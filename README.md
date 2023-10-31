@@ -1,17 +1,29 @@
-# svg-generator
+# SVG Logo Generator
 
-## Acceptance Criteria
------GIVEN a command-line application that accepts user input //  *install inquirer* 
------WHEN I am prompted for text
------THEN I can enter up to three characters 
------WHEN I am prompted for the text color
------THEN I can enter a color keyword (OR a hexadecimal number)
------WHEN I am prompted for a shape
------THEN I am presented with a list of shapes to choose from: circle, triangle, and square
------WHEN I am prompted for the shape's color
------THEN I can enter a color keyword (OR a hexadecimal number)
-**WHEN I have entered input for all the prompts
-**THEN an SVG file is created named `logo.svg` *writefile needs fs module*
-**AND the output text "Generated logo.svg" is printed in the command line
-**WHEN I open the `logo.svg` file in a browser
-**THEN I am shown a 300x200 pixel image that matches the criteria I entered 
+## Table of Contents
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Resources](#resources)
+- [Tests](#tests)
+- [Questions](#questions)
+
+## Description
+Hi! My name is Tatum Sterling, and this is my SVG Logo Generator application. This application was designed to create a simple logo for the user based on their answers to a series of questions. I created it to give users a reliable resource for creating an svg logo for their company, and I used javascript to bring SVG Logo Generator to life!
+        
+## Installation
+this applications runs with node.js
+        
+## Usage
+To use this application, install anything necessary from the installation section, then click the link below to be redirected to the app. From there, you can expect to see a series of questions in the terminal . To navigate, you may answer the questions accordingly, then open the generated svg logo file in your browser to view .
+        
+## License
+please refer to LICENSE in the repo
+        
+  
+## Questions
+For any questions, you may contact me at 
+[GitHub](https://github.com/tatumsterling),
+or [Email](mailto:tatumoakley29@hotmail.com)

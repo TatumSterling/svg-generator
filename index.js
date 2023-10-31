@@ -1,8 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { isHex, isValidColorKey } = require('./colors');
-const { createCircle, createTriangle, createSquare } = require('./template');
-const { questions } = require('./questions');
+const { isHex, isValidColorKey } = require('./lib/colors');
+const { createCircle, createTriangle, createSquare } = require('./lib/template');
+const { questions } = require('./lib/questions');
 
 inquirer.prompt(questions)
 .then((res) => {
