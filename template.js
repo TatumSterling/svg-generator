@@ -1,22 +1,30 @@
 function createCircle(res) {
-    `<svg height = "300" width="200">
-        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="${res.shapeColor}" />
-        <text x="30" y="60" fill="${res.txtColor}" style="font-size: 12px;">${res.letters}</text>
-    </svg>
-    `
+    return `
+    <svg version="1.1"
+        width="300" height="200"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle cx="150" cy="100" r="100" fill="${res.shapeColor}" />
+        <text x="150" y="125" font-size="70" text-anchor="middle" fill="${res.txtColor}">${res.letters}</text>
+    </svg>`
 };
 
 function createTriangle(res) {
-    `<svg height="300" width="200">
-    <polygon points="100,10 40,290 160,290" fill="${res.shapeColor}" />
-    <text x="30" y="50" fill="${res.txtColor}">${res.letters}</text>
+    return `
+    <svg version="1.1" 
+        width="300" height="200"
+        xmlns="http://www.w3.org/2000/svg">
+        <polygon points="100, 15 200, 200 0, 200" fill="${res.shapeColor}"/>
+        <text x="100" y="185" font-size="70" text-anchor="middle" fill="${res.txtColor}">${res.letters}</text>
     </svg>`
 };
 
 function createSquare(res) {
-    `<svg height="300" width="200">
-        <rect x="10" y="10" width="100" height="100" fill="${res.shapeColor}" />
-        <text x="30" y="50" fill="${res.txtColor}">${res.letters}</text>
+    return `
+    <svg version="1.1"
+        width="300" height="200"
+        xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="200" fill="${res.shapeColor}"/>
+        <text x="100" y="125" font-size="70" text-anchor="middle" fill="${res.txtColor}">${res.letters}</text>
     </svg>`
 };
 

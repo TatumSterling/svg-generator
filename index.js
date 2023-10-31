@@ -1,75 +1,26 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { isHex, isValidColorKey }= require('./colors');
-const {createCircle, createTriangle, createSquare } = require('./template')
-inquirer 
-    .prompt([
-        {
-            type: 'input',
-            name: 'letters',
-            message: 'please enter up to 3 letters for your logo',
-            // checks to see if user input is within acceptable range
-            validate: function(input) {
-                const trimmedInput = input.trim(); // trim method removes any extra white space from user input
+const { isHex, isValidColorKey } = require('./colors');
+const { createCircle, createTriangle, createSquare } = require('./template');
+const { questions } = require('./questions');
 
-                if (trimmedInput.length === 0) {
-                    return 'you must enter at least 1 character'; 
-                } else if (trimmedInput.length > 3) {
-                    return 'maximum 3 characters allowed';
-                }
+inquirer.prompt(questions)
+.then((res) => {
+  let logo;
 
-                return true;
-            }
-        },
-        {
-            type: 'input',
-            name: 'txtColor',
-            message: 'What color would you like the text to be? (if you are using a hex color, please include the `#`)',
-            validate: function(input) {
-                // Check if the input is a valid color keyword or valid hex color
-                if (!isValidColorKey(input) && !isHex(input)) {
-                    return 'Invalid color format. Please enter a valid color keyword or a hexadecimal color code.';
-                }
-            
-                return true;
-                },
-            
-         },
-        {
-            type: 'list',
-            message: 'please select a shape',
-            name: 'shape',
-            choices: [
-                "Triangle",
-                "Square",
-                "Circle"
-            ],
-        },
-        {
-            type: 'input',
-            message: 'what color would you like the shape to be?',
-            name: 'shapeColor',
-            validate: function(input) {
-                // Check if the input is a valid color keyword or valid hex color
-                if (!isValidColorKey(input) && !isHex(input)) {
-                    return 'Invalid color format. Please enter a valid color keyword or a hexadecimal color code.';
-                }
-            
-                return true;
-                },
-            
+  if (res.shape === "Triangle") {
+    logo = createTriangle(res);
+  } else if (res.shape === "Square") {
+    logo = createSquare(res);
+  } else {
+    logo = createCircle(res);
+  }
 
-        }
-
-    ]).then((res)=> 
-        function logoCreator(res) {
-            if (`${res.shape}`=== "Triangle") {
-                return createTriangle();
-            } else if (`${res.shape}` === "Square") {
-                return createSquare();
-            } else {
-                return createCircle();
-            };
-        }
-    );
-
+  fs.writeFile('logo.svg', logo, (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("Generated logo.svg");
+    }
+  });
+});
