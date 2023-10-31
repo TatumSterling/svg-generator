@@ -16,8 +16,7 @@ this applications runs with node.js
 ## Usage
 To use this application, install anything necessary from the installation section, you may view the video below for a visualization of the application. Once downloaded, you can expect to see a series of questions in the terminal . To navigate, you may answer the questions accordingly, then open the generated svg logo file in your browser to view .
 
-
-![svgGeneratorDemo.webm](https://youtu.be/FT_c9RkcaGE)
+https://www.youtube.com/watch?v=FT_c9RkcaGE
         
 ## License
 
